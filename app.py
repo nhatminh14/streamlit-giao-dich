@@ -9,8 +9,12 @@ st.set_page_config(
 
 st.title("Dashboard giao dịch thanh toán")
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
 df = pd.read_excel(
-    "digital_payment_fraud_shield_output.xlsx",
+    BASE_DIR / "digital_payment_fraud_shield_output.xlsx",
     sheet_name="predictions"
 )
 # Biểu đồ theo ngày
